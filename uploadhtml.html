@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Upload</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+	<form action ="{% url 'uploadhtml' %}" method="POST" class="post-form">
+		{% csrf_token %}
+		<input type="text" placeholder="certificate name" name="certificate_name" value="">
+		<br>
+		<input type="file" placeholder="upload pdf" name="certicate_pdf" value="" >
+</body>
+</html>
