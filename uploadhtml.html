@@ -6,11 +6,14 @@
 	<title>Upload</title>
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body>
-	<form action ="{% url 'uploadhtml' %}" method="POST" class="post-form">
-		{% csrf_token %}
-		<input type="text" placeholder="certificate name" name="certificate_name" value="">
-		<br>
-		<input type="file" placeholder="upload pdf" name="certicate_pdf" value="" >
-</body>
+<body>  
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload</button>
+  </form>
+
+  <p><a href="{% url 'base' %}">Return to home</a></p> 
+</body>  
+
 </html>
