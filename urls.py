@@ -24,7 +24,17 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('base/',views.base,name="base"),
     path('signin/',views.signin,name="signin"),
-    path('uploadhtml/',views.uploadhtml,name="uploadhtml")
+    path('loginerror/',views.loginerror,name="loginerror"),
+    path('uploadhtml/',views.uploadhtml,name="uploadhtml"),
+    path('exportcsv', views.exportcsv),
+    path('showlogin/',views.showlogin,name="show"),
+    path('showdocument/',views.showdocument,name="showdocument"),
+    path('faclogin/',views.faclogin,name="faclogin"),
+    path('facerror/',views.facerror,name="facerror"),
+    path('facdata/',views.facdata,name="facdata"),
+    path('base1/',views.base1,name="base1"),
+    path('fac_data_fail/',views.fac_data_fail,name="fac_data_fail"),
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
