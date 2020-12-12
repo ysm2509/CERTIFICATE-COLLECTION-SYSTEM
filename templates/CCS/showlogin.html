@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Showing details</title>
+</head>
+<body>
+  <p>welcome {{ Login.userid }}</p>
+	<div class="container">
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>userid</th>
+		<th>pwd</th>
+      </tr>
+    </thead>
+    <tbody>
+	{% for stud in login %}  
+      <tr>
+        <td>{{stud.userid}}</td>
+        <td>{{stud.pwd}}</td>
+      </tr>
+	  {% endfor %} 
+	</tbody>
+</table>	
+</div>
+
+</body>
+</html>

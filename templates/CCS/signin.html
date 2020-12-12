@@ -3,9 +3,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Sign In Page</title>
+	<title>Sign In Page</title> 
 	<link rel="stylesheet" href="{% static 'css/logo.png' %}">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link href="{% static 'css/bootstrap.min.css' %}" > 
 </head>
 <body>
 	<form action ="{% url 'signin' %}" method="POST" class="post-form">
@@ -13,11 +14,11 @@
 		<img  src="{% static 'css/logo.png' %}" alt="Image description" width="85" height="85" style="float:left">
 		<h1 style="color:white; text-align:center;" "font-family:verdana;" >Gayatri Vidya Parishad College of Engineering for Women</h1>
 		<br>
-		<hr>
 		<h2 style="color:white; text-align:center;" >CERTIFICATE COLLECTION SYSTEM</h2>
 		
 	<div class="login-box">
-       
+       {% block content %} 
+        {% endblock %}
 		<h2>Login Here</h2>
 		<div class='textbox'>
 		

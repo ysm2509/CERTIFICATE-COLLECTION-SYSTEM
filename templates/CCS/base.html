@@ -4,23 +4,64 @@
 <head>
 	<meta charset="utf-8">
 	<title>Basic Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="{% static 'css/logo.png' %}">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<style>
+a:link, a:visited {
+  background-color: #f44300;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: green;
+}
+</style>
 </head>
 <body>
+
 	<form action ="{% url 'base' %}" method="POST" class="post-form">
 		{% csrf_token %}
 		<img  src="{% static 'css/logo.png' %}" alt="Image description" width="75" height="65" style="float:left">
+		<br>
 		<h1 style="color:white; text-align:center;" "font-family:verdana;" >Gayatri Vidya Parishad college of engineering for Women</h1>
 		<br>
-		<hr>
+        <br>
 		<h2 style="color:white; text-align:center;" >CERTIFICATE COLLECTION SYSTEM</h2>
-		
-	<div class="login-box">
-       <a href="{% url 'signin' %}" >student signin</a>
-       <a href="{% url 'signin' %}" >faculty signin</a>
-		
-	</div>
+		<br>
+		<h4 style="color:white; text-align:center;">Welcome to our portal!!!!</h4>
+					<div class="container">
+  <br>
+  <br>
+  <br>
+  <div class="card-columns d-flex justify-content-center">
+  <div class="card col-md-6 bg-secondary text-white">
+    <div class="card-body">
+    	<h5>Are you student login here----</h5>
+    	<div class="btn-group">
+    <button type="button" class="btn btn-primary btn-sm"><a href="{% url 'faclogin' %}" >signin</a></button> 
+    </div>
+  </div>
+</div>
+  <br>
+  <div class="card col-md-6 bg-secondary  text-white">
+    <div class="card-body" >
+    	<h5>Faculty Login ------- </h5>
+    	<div class="btn-group" align="right">
+    <button type="button" class="btn btn-primary btn-sm"><a href="{% url 'signin' %}" >signin</a></button> 
+    </div>
+  </div>
+</div>
+  <br>
+</div>
 </form>
 </body>
 </html> 

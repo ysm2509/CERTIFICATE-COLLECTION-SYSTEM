@@ -4,16 +4,21 @@
 <head>
 	<meta charset="utf-8">
 	<title>Upload</title>
-	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link href="{% static 'css/bootstrap.min.css' %}" > 
+	<link rel="stylesheet" href="{% static 'css/style1.css' %}">
 </head>
 <body>  
   <form method="post" enctype="multipart/form-data">
+    <p>welcome {{ userid }}</p>
+  	<fieldset class="fieldset-auto-width">
+    <legend>Upload Files here:</legend>
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Upload</button>
   </form>
 
-  <p><a href="{% url 'base' %}">Return to home</a></p> 
+  <p><a href="{% url 'base' %}"><input cls="btn" type="submit" name="" value="return to home"></a></p> 
+</fieldset>
 </body>  
 
 </html>
