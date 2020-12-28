@@ -10,24 +10,24 @@
 </head>
 <body>
 	<form action ="{% url 'signin' %}" method="POST" class="post-form">
-		{% csrf_token %}
 		<img  src="{% static 'css/logo.png' %}" alt="Image description" width="85" height="85" style="float:left">
 		<h1 style="color:white; text-align:center;" "font-family:verdana;" >Gayatri Vidya Parishad College of Engineering for Women</h1>
 		<br>
 		<h2 style="color:white; text-align:center;" >CERTIFICATE COLLECTION SYSTEM</h2>
 		
 	<div class="login-box">
+		{% csrf_token %}
        {% block content %} 
         {% endblock %}
 		<h2>Login Here</h2>
 		<div class='textbox'>
 		
-			<input type="text" placeholder="rollno.name@gvpcew.ac.in" name="userid" value="">
+			<input type="text" placeholder="rollno.name@gvpcew.ac.in" name="username" value="">
 			
 		</div>
 
 		<div class='textbox'>
-			<input type="password" placeholder="password" name="pwd" value="" >
+			<input type="password" placeholder="password" name="password" value="" >
 			
 		</div>
 

@@ -1,53 +1,23 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Upload</title>
-	<link rel="stylesheet" href="{% static 'css/style.css' %}">
-<style>
-table {
-  width:100%;
-}
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 15px;
-  text-align: left;
-}
-#t01 tr:nth-child(even) {
-  background-color: #eee;
-}
-#t01 tr:nth-child(odd) {
- background-color: #fff;
-}
-#t01 th {
-  background-color: black;
-  color: white;
-}
-</style>
-</head>
-<body>  
-<table id="t01" >
+ {% extends "CCS/student_dashboard.html" %}
+ {% block content %} 
+<div class="container">           
+  <table class="table table-bordered">
     <thead>
-      <tr>
-        <th>description</th>
-		<th>file</th>
-		<th>uploaded time</th>
+      <tr class="table-warning">
+        <th class="font-weight-bolder">Description</th>
+    <th>File</th>
+    <th>Uploaded On</th>
       </tr>
     </thead>
     <tbody>  
-      <tr>
         {% for stud in document %}
-        <td>{{stud.description}}</td>
-        <td><a href="{{ stud.document.url }}" target="_blank" rel="noopener noreferrer">Download</a></td>
-        <td>{{stud.uploaded_at}}</td>
+        <tr class="table-light">
+           <td>{{stud.description}}</td>
+           <td><a href="{{ stud.document.url }}" target="_blank" rel="noopener noreferrer" download>Download</a></td>
+           <td>{{stud.uploaded_at}}</td>
+         </tr>  
         {% endfor %} 
-      </tr>
-	</tbody>
-</table>	
-</body>  
-
-</html>
+  </tbody>
+</table>  
+</div>
+{% endblock %}

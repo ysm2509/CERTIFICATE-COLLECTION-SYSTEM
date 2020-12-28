@@ -1,0 +1,15 @@
+{% extends "CCS/base1.html" %}
+ {% block content %}  
+<div class="card bg-success text-white" style="width: 25  rem;">
+  <div class="card-header">
+    Register student
+  </div>
+  <div class="card-body">
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">signup</button>
+  </form>
+</div>
+</div>
+{% endblock %}

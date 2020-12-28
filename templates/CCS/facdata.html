@@ -4,16 +4,56 @@
   <div class="jumbotron">
     <h2 align="center">Get Student data</h2>     
   </div> 
-  <h4>Enter Student Id</h4>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-right">
+  <div class="container">
+    <h3 class="text-success">Faculty Dashboard</h4>
+</div>
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="{% url 'facdata' %}">search</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="{% url 'student_signup' %}">Register a student</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="/logout">logout</a>
+    </li>
+  </ul>
+</nav>
+
   <form action ="{% url 'facdata' %}" method="POST" class="post-form">  
   	{% csrf_token %}
   <div class="form-group">
   	
       <label for="userid">Name:</label>
-      <input type="text" class="form-control" id="userid" placeholder="rollnumber"name="userid">
+      <input type="text" class="form-control"  placeholder="name" name="username">
       <br>
       <input type="submit" class="btn btn-info" value="Submit Button">
     </div> 
     </form>   
+    
+
+
+<div class="container">           
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>description</th>
+    <th>file</th>
+    <th>uploaded time</th>
+      </tr>
+    </thead>
+    <tbody>  
+        {% for stud in document %}
+        <tr>
+           <td>{{stud.description}}</td>
+           <td><a href="{{ stud.document.url }}" target="_blank" rel="noopener noreferrer">Download</a></td>
+           <td>{{stud.uploaded_at}}</td>
+         </tr>  
+        {% endfor %} 
+  </tbody>
+  </table>
+</div>
+
 </div>
 {% endblock %}

@@ -1,24 +1,27 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Upload</title>
-	<link href="{% static 'css/bootstrap.min.css' %}" > 
-	<link rel="stylesheet" href="{% static 'css/style1.css' %}">
-</head>
-<body>  
+ {% extends "CCS/student_dashboard.html" %}
+ {% block content %} 
+<div class="container d-flex h-100">
+    <div class="row justify-content-center align-self-center">
+   
+ <div class="container" >
+  <div class="card bg-success text-white">
+ 
   <form method="post" enctype="multipart/form-data">
-    <p>welcome {{ userid }}</p>
-  	<fieldset class="fieldset-auto-width">
-    <legend>Upload Files here:</legend>
+    <div class="card-header">
+    {% if user.is_authenticated %}
+        <h1>{{ user.username }} upload files </h1>
+    {% endif %} 
+  </div>
+  <div class="card-body">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Upload</button>
+    </div>
+    <div class="card-footer">
+   <button type="submit">Upload</button>
+ </div>
   </form>
-
-  <p><a href="{% url 'base' %}"><input cls="btn" type="submit" name="" value="return to home"></a></p> 
-</fieldset>
-</body>  
-
-</html>
+ </div>
+</div>
+</div>
+</div>
+{% endblock %}
