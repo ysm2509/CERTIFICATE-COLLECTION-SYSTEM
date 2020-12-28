@@ -23,7 +23,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('base/',views.base,name="base"),
+    path('student_dashboard/',views.student_dashboard,name="student_dashboard"),
+    path('logout/',views.user_logout,name="user_logout"),
     path('signin/',views.signin,name="signin"),
+    path('student_signup/',views.student_signup,name='student_signup'),
     path('loginerror/',views.loginerror,name="loginerror"),
     path('uploadhtml/',views.uploadhtml,name="uploadhtml"),
     path('exportcsv', views.exportcsv),
